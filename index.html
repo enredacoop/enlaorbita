@@ -1,0 +1,326 @@
+
+<html>
+<head>
+	 
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"3000fd6b0a","agent":"","transactionName":"ZQEHY0ZZDEdZUEQLWlxLI0JaWxZdV10fAVpAAUtBXV0VRwJ7Xw9QHAMAQw==","applicationID":"9344760","errorBeacon":"bam.nr-data.net","applicationTime":14}</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="google-site-verification" content="LPhduRSzXUYmgI2LJtkfJaUX19LRzPhy4IQmfzmnuzw" /> 
+	<title>enlaorbita / </title>
+
+	<!-- Specific CSS -->
+	<link href="static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/css/font-awesome.min.css" rel="stylesheet">
+	<link href="static/css/owl.carousel.css" rel="stylesheet">
+        <link href="static/libs/cookielaw/css/cookielaw.css" rel="stylesheet">
+	<link href="static/css/styles.css" rel="stylesheet">
+
+	
+	
+	
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-67994481-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+
+        <!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+	fbq('init', '173406573001363');
+	fbq('track', "PageView");</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=173406573001363&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- End Facebook Pixel Code -->
+
+</head>
+
+<body>
+	
+        
+
+<div id="CookielawBanner">
+          <p>
+            Utilizamos cookies para que tengas la mejor experiencia de navegación. Si sigues navegando entendemos que aceptas nuestra <a class="link" href="http://enlaorbita.com/policy/">política de cookies</a>.
+          </p>
+          <a class="btn btn-primary" href="javascript:Cookielaw.createCookielawCookie();">Cerrar</a>
+    </div>
+</div>
+
+              
+    <div id="loader" class="va-container pbc">
+        <div class="va-middle">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+        </div>
+    </div>
+    <!-- BEGIN HEADER -->
+    <header id="header" class="header menu-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"><i class="fa fa-bars"></i></button>
+                    <a class="navbar-brand" href="index.html"><img src="static/images/logo.png" class="img-responsive" alt="enlaórbita.com"/></a>
+                </div>
+                <div class="col-sm-8 col-sm-offset-1">
+                    <nav class="collapse navbar-collapse navbar-main-collapse">
+                        <ul id="nav" class="nav navbar-nav navigation">
+                            <li class="page-scroll menu-item"><a href="index.html#que">Qué es</a></li>
+                            <li class="page-scroll menu-item"><a href="index.html#para">Por qué</a></li>
+                            <li class="page-scroll menu-item"><a href="index.html#planes">Planes</a></li>
+                            <li class="page-scroll menu-item"><a href="http://enlaorbita.com/blog">Blog</a></li>
+                        
+                            <li class="page-scroll menu-item separator"><a href="http://enlaorbita.com/accounts/login/">ACCEDER</a></li>
+							<li class="page-scroll menu-item border"><a href="http://enlaorbita.com/accounts/signup/">REGISTRARSE</a></li>
+                        
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- BEGIN SIGNUP -->
+
+
+
+
+	
+
+  
+
+   <!-- LOGIN SECTION -->
+  <section class="section signup text-center jumbotron" id="signup">
+        <div class="container">
+            <h1 class="title">¿Necesitas que te encuentren?</h1>
+            <h2 class="subtitle">Ponte en la órbita digital y asume el control de tu empresa en internet</h2>
+            <div class="row">
+                
+                <div class="text-center">
+                    <div class="form-group col-sm-4 col-sm-offset-4">
+                        <a href="mailto:info@enlaorbita.com" type="submit" class="btn-block btn btn-primary">Escríbenos</a>
+                    </div>
+                </div>
+                
+          
+        </div>
+    </section>
+
+
+    <!-- BEGIN QUE ES -->
+    <section class="section que" id="que">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1 class="title">¿Qué es?</h1>
+                    <div class="text">
+                        <p>En la Órbita es una <b>herramienta digital para tener tu propio espacio web</b> y mejorar la presencia online de tu empresa, organización, asociación, fundación, ONG, Pyme, etc.</p>
+                        <p>Se caracteriza por su <b>sencillez</b>, pues está pensada cualquier personas, que no tienen al alcance de la mano y del bolsillo el desarrollo de páginas web avanzadas.</p><p> Además destaca por ser <span data-toggle="tooltip" data-placement="top" title=" Las páginas pueden verse desde cualquier dispositivo: móvil, pc, tableta"><b>responsive</b> <i class="fa fa-question-circle"></i></span> y el <span data-toggle="tooltip" data-placement="top" title=" Para mejorar la visibilidad de la paǵina en buscadores online"><b>posicionamiento web</b> <i class="fa fa-question-circle"></i></span>, dos características importantes de las páginas web para que cualquiera pueda localizar con facilidad a tu empresa, asociación u organización, consiguiendo así tus objetivos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BEGIN PARA QUE -->
+    <section class="section para" id="para">
+        <div class="container">
+            <div class="row table">
+                <div class="col-sm-8 cell">
+                    <img src="static/images/showcase.jpg" class="img-responsive" alt="Plantillas de enlaórbita.com">
+                </div>
+                <div class="col-sm-4 cell">
+                    <h2 class="title">Una herramienta para crear tu espacio web</h2>
+                    <ul>
+                        <li><i class="fa fa-check"></i>Sencilla y accesible</li>
+                        <li><i class="fa fa-check"></i>Sostenible</li>
+                        <li><i class="fa fa-check"></i>Innovadora y distinta</li>
+                        <li><i class="fa fa-check"></i>Adaptada a ti</li>
+                        <li><i class="fa fa-check"></i>Rápida y segura</li>
+                    </ul>
+                    <h2 class="title">Y además...</h2>
+                    <ul>
+                        <li><i class="fa fa-check"></i>Análisis de SEO</li>
+                        <li><i class="fa fa-check"></i>Posicionamiento</li>
+                        <li><i class="fa fa-check"></i>Gestión de publicidad online</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section summary">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <img src="static/images/icon-1.png" alt="Presencia">
+                    <h3 class="title">Presencia</h3>
+                    <p class="text">Todos tenemos derecho a una presencia digital óptima</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img src="static/images/icon-2.png" alt="Visibilidad">
+                    <h3 class="title">Visibilidad</h3>
+                    <p class="text">Haz que te encuentren de manera más fácil en Internet</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img src="static/images/icon-3.png" alt="Conversión">
+                    <h3 class="title">Conversión</h3>
+                    <p class="text">No dudes en dar el paso ¡Consigue tus objetivos!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BEGIN PLANES -->
+	<section class="section planes" id="planes">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h2 class="title">Echa un vistazo a nuestros planes</h2>
+					<h3 class="subtitle"><b>Todos los planes tienen un periódo de solo 1 año.</b> <br> Puedes consultar el precio de los planes por meses o por años. La contratación anual tiene un descuento añadido. Una vez transcurrido el primer año sólo pagarás el dominio (10€/anuales).</h3>
+				</div>
+     
+                <div class="col-sm-12 text-center">
+                           <div class="btn-group btn-toggle switch"> 
+                            <button class="btn btn-xs btn-default month">Mensual</button>
+                            <button class="btn btn-xs btn-danger active year">Anual (ahorra 15%)</button>
+                            </div>
+                </div>
+            
+				<div class="col-sm-4 item">
+					<div class="image text-center"><img src="static/images/curioso.png" alt="El curioso"></div>
+					<h3 class="title">El curioso</h3>
+					<ul>
+						<li><i class="fa fa-check"></i>Podrás tener tu espacio web</li>
+						<li><i class="fa fa-check"></i>El alojamiento del portal será gratuito</li>
+						<li><i class="fa fa-check"></i>No incluye dominio propio</li>
+					</ul>
+					<div class="price m">59 <span class="currency">€/mes</span></div>
+					<div class="price y">600 <span class="currency">€/año</span></div>
+					 
+				</div>
+				<div class="col-sm-4 item">
+					<div class="image text-center"><img src="static/images/astronomo.png" alt="El astrónomo"></div>
+					<h3 class="title">El astrónomo</h3>
+					<ul>
+						<li><i class="fa fa-check"></i>Personaliza tu espacio web</li>
+						<li><i class="fa fa-check"></i>Incluye accesorios básicos: mapas, redes sociales…</li>
+						
+					</ul>
+					<div class="price m">77<span class="float">'70</span> <span class="currency">€/mes</span></div>
+					<div class="price y">790 <span class="currency">€/año</span></div>
+					 
+				</div>
+				<div class="col-sm-4 item">
+					<div class="image text-center"><img src="static/images/cosmonauta.png" alt="El cosmonauta"></div>
+					<h3 class="title">El cosmonauta</h3>
+					<ul>
+						<li><i class="fa fa-check"></i>Acompañamiento digital</li>
+						<li><i class="fa fa-check"></i>Personaliza tu espacio web</li>
+						<li><i class="fa fa-check"></i>Incluye posicionamiento web</li>
+                        <li><i class="fa fa-check"></i>Incluye gestión de publicidad online</li>
+						
+					</ul>
+					<div class="price m">125<span class="float">50</span> <span class="currency">€/mes</span></div>
+					<div class="price y">1.280 <span class="currency">€/año</span></div>
+					 
+				</div>
+			</div>
+		</div>
+	</section>
+    <!-- BEGIN SHOWCASE -->
+    <section class="section showcase" id="showcase">
+        <div class="container">
+            <h2 class="title">Ya están en la órbita</h2>
+            <div class="carousel">
+                <div class="item">
+                    <a href="http://hostalcampito.com/" target="_blank">
+                    <div class="overlay"><i class="fa fa-desktop"></i>vista previa</div>
+                    <img src="static/images/hostalcampito.png" alt="Hostal Campito">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="http://41cero10.org" target="_blank">
+                    <div class="overlay"><i class="fa fa-desktop"></i>vista previa</div>
+                    <img src="static/images/41cero10_demo.png" alt="41cero10">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="http://lab.ungrynerd.com/clientes/enreda/pro/" target="_blank">
+                    <div class="overlay"><i class="fa fa-desktop"></i>vista previa</div>
+                    <img src="static/images/vlistus.jpg" alt="Vlistus">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="http://lab.ungrynerd.com/clientes/enreda/basic/" target="_blank">
+                    <div class="overlay"><i class="fa fa-desktop"></i>vista previa</div>
+                    <img src="static/images/basic.jpg" alt="Basic">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+ 
+
+  <!-- BEGIN FOOTER -->
+	<footer id="footer" class="footer menu-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3 page-scroll">
+					<a class="navbar-brand" href="index.html#signup"><img src="static/images/logo.png" class="img-responsive" alt="enlaórbita.com"/></a>
+				</div>
+				<div class="col-sm-8 col-sm-offset-1">
+					<nav class="navbar">
+						<ul id="nav" class="nav navbar-nav navigation">
+                                                  <li class="menu-item"><a href="http://enlaorbita.com/thecompany/">Empresa</a></li>
+              				<li class="menu-item"><a href="http://enlaorbita.com/support/">Soporte</a></li>
+              				<li class="menu-item"><a href="http://enlaorbita.com/policy/">Aviso legal</a></li>
+              				<li class="menu-item"><a href="http://eepurl.com/bBM00H" target="_blank">Suscríbete newsletter</a></li>
+							<li class="menu-item icon"><a href="https://twitter.com/enlaorbitacom"><i class="fa fa-twitter"></i></a></li>
+							<li class="menu-item icon"><a href="https://www.facebook.com/enlaorbitacom"><i class="fa fa-facebook"></i></a></li>
+							<li class="menu-item icon"> <img src="static/images/ue-enlaorbita.png" style="width: 200" />  </li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+<script src="static/js/jquery.js"></script>
+<script src="static/js/owl.carousel.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/default.js"></script>
+<script src="static/libs/cookielaw/js/cookielaw.js"></script>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+    
+	
+	
+</body>
+</html>
